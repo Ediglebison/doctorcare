@@ -26,7 +26,7 @@ function activateMenuAtCurrentSection(section) {
     const sectionHeight = section.offsetHeight
 
     //o topo da seção chegou ou passou da linha alvo
-    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+    const sectionTopReachOrPassedTargetline = targetLine >= sectionTop
     
 
     // verificar se a base da seção está abaixo do alvo
@@ -36,15 +36,15 @@ function activateMenuAtCurrentSection(section) {
     const sectionEndsAt = sectionTop + sectionHeight
 
     // o final da seção passou da linha alvo?
-    const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+    const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
     // limites da seção
-    const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+    const sectionBoundaries = sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
 
-    const sectionId = section.getAttibute('id')
+    const sectionId = section.getAttribute('id')
     const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
 
-    //menuElement.classList.remove('active')
+    menuElement.classList.remove('active')
     if (sectionBoundaries) {
         menuElement.classList.add('active')
     }
